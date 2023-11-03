@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0" />
+    <title>footprintcalculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="bg-1">
+        <header class="two">
+          <div class="headerr">
+            <div class="m-header">
+              <div class="chotu">
+                <form>
+                  <select id="lang" name="language">
+                    <option value="English">English</option>
+                    <option value="Spanish" class="Spanish">Spanish</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="portuguese">portuguese</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="French">French</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <div class="logo-container">
+              <div class="logo-main">
+                <div class="fll">
+                  <a href="https://www.footprintnetwork.org/" target="_blank">
+                    <div class="pb">
+                      <span>Created and Powered by</span>
+                      <img
+                        src="assets/logo-GFN-white.png"
+                        alt=""
+                        class="imgg"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div id="guideModel" class="modal fade show">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="image spin-slow">
+                <img src="assets/globe.png" alt="" />
+              </div>
+              <div class="model-text text-center">
+                <h3><b>Want to change your language?</b></h3>
+                <p>Select from available language for the calculator here.</p>
+              </div>
+              <div id="xbtn" class="cta-close hvr-spin" oncl>×</div>
+            </div>
+          </div>
+          <div class="guideArrow">
+            <img src="assets/icon-arrow-orange.png" alt="" />
+          </div>
+        </div>
+        <div class="cloudcont">
+          <div class="clouds">
+            <img src="assets/cloud1.png" alt="" class="cloud c1" />
+            <img src="assets/cloud2.png" alt="" class="cloud c2" />
+            <img src="assets/cloud3.png" alt="" class="cloud c3" />
+          </div>
+        </div>
+        <div class="remain-b">
+          <div class="container-plane">
+            <img src="assets/plaingif.gif" alt="" class="fly" />
+          </div>
+          <div class="container-content text-capitalize text-center">
+            <div class="content">
+              <div class="blur">
+                <p class="caption">WHAT IS YOUR</p>
+                <h1 class="hero-title">Ecological Footprint?</h1>
+                <h2 class="sub-title">
+                  How many planets do we need if everybody lives like you?
+                  <br />
+                  "When is your personal Overshoot Day? "
+                </h2>
+                <div class="container-foot fade-to-top">
+                  <a href="https://www.footprintnetwork.org/">
+                    <img src="assets/footlogo.png" alt="" class="front-img"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer-container">
+            <div class="tress-cont">
+              <img src="assets/tree1.png" alt="" class="tree1 tree" />
+              <img src="assets/tree2.png" alt="" class="tree2 tree" />
+              <img src="assets/tree3.png" alt="" class="tree3 tree" />
+              <img src="assets/tree1.png" alt="" class="tree4 tree" />
+              <img src="assets/tree4.png" alt="" class="tree5 tree" />
+              <img src="assets/tree5.png" alt="" class="tree6 tree" />
+              <img src="assets/tree7.png" alt="" class="tree7 tree" />
+              <img src="assets/tree8.png" alt="" class="tree8 tree" />
+              <img src="assets/tree9.png" alt="" class="tree9 tree" />
+              <img src="assets/tree10.png" alt="" class="tree10 tree" />
+              <img src="assets/tree11.png" alt="" class="tree11 tree" />
+              <img src="assets/tree12.png" alt="" class="tree12 tree" />
+            </div>
+            <div
+              class="grass"
+              style="background-image: url('assets/earth.png')"
+            ></div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        var element = document.getElementById("guideModel");
+        element.style.display = "block"; // Change 'block' to 'inline', 'inline-block', or any other display style you prefer.
+      });
+
+      document.getElementById("xbtn").addEventListener("click", function () {
+        var element = document.getElementById("guideModel");
+        if (element.style.display === "none") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
+
+      document.getElementById("lang").addEventListener("change", function () {
+        var element = document.getElementById("guideModel");
+        element.style.display = "none";
+      });
+      document.getElementById("lang").addEventListener("change", function () {
+        var selectedOption = this.value;
+
+        var outputDiv1 = document.querySelector(".caption");
+        var outputDiv2 = document.querySelector(".hero-title");
+        var outputDiv3 = document.querySelector(".sub-title");
+
+        switch (selectedOption) {
+          case "English":
+            outputDiv1.innerHTML = "WHAT IS YOUR";
+            outputDiv2.innerHTML = "Ecological Footprint?";
+            outputDiv3.innerHTML = `How many planets do we need if everybody lives like you?<br>
+                            "When is your personal Overshoot Day? "`;
+            break;
+          case "Spanish":
+            outputDiv1.innerHTML = "cual es tu";
+            outputDiv2.innerHTML = "¿Huella ecológica?";
+            outputDiv3.innerHTML = `¿Cuántos planetas necesitamos si todos viviéramos como tú?<br>
+                          "¿Cuándo es tu día de exceso personal?"`;
+            break;
+          case "Hindi":
+            outputDiv1.innerHTML = "आपका क्या है";
+            outputDiv2.innerHTML = "पारिस्थितिक पदचिह्न?";
+            outputDiv3.innerHTML = `यदि हर कोई आपकी तरह जीवन जीते तो हमें कितने ग्रहों की आवश्यकता होगी?<br>
+                  "आपका व्यक्तिगत ओवरशूट दिवस कब है?"`;
+            break;
+          case "portuguese":
+            outputDiv1.innerHTML = "cual es tu";
+            outputDiv2.innerHTML = "¿Huella ecológica?";
+            outputDiv3.innerHTML = `¿Cuántos planetas necesitamos si todos viviéramos como tú?<br>
+                          "¿Cuándo es tu día de exceso personal?"`;
+            break;
+          case "Chinese":
+            outputDiv1.innerHTML = "你的...是";
+            outputDiv2.innerHTML = "生態足跡？";
+            outputDiv3.innerHTML = `如果每個人都像你一樣生活，我們需要多少個星球？<br>
+“你個人的超載日是什麼時候？”`;
+            break;
+          case "Urdu":
+            outputDiv1.innerHTML = "تمہارا کیا ہے";
+            outputDiv2.innerHTML = "ایکولوجیکل فوٹ پرنٹ؟";
+            outputDiv3.innerHTML = `اگر ہر کوئی آپ کی طرح رہتا ہے تو ہمیں کتنے سیاروں کی ضرورت ہے؟
+<br>"آپ کا ذاتی اوور شوٹ ڈے کب ہے؟"`;
+            break;
+          case "French":
+            outputDiv1.innerHTML = "Quel est ton";
+            outputDiv2.innerHTML = "Empreinte écologique?";
+            outputDiv3.innerHTML = `De combien de planètes avons-nous besoin si tout le monde vit comme vous ?<br>
+"Quand est votre jour de dépassement personnel?"`;
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>

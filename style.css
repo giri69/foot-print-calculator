@@ -109,7 +109,6 @@ body {
     position: relative;
     min-height: 100vh;
     font-size: 10px;
-    font-family: FuturaPTMedium;
     overflow-x: hidden;
     box-sizing: border-box;
     z-index: 0;
@@ -259,7 +258,7 @@ img {
 
 .container-plane img {
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
     height: 6rem;
     width: auto;
@@ -643,8 +642,8 @@ z-index: 1;
 #guideModel .modal-content {
     width: 100vh;
     height: 100vh;
-    max-width: 37rem;
-    max-height: 37rem;
+    max-width: 40rem;
+    max-height: 40rem;
 }
 #guideModel .modal-content {
     position: relative;
@@ -725,7 +724,7 @@ p {
     transition: .2s ease-in-out;
 }
 .cta-close {
-    font-family: FuturaPTLight;
+    font-family: sans-serif;
     cursor: pointer;
 }
 .cta-close {

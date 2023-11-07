@@ -151,6 +151,10 @@
         border-radius: 5px;
         position: relative;
     }
+    .slider {
+        display: flex;
+        transition: transform 0.3s ease; /* Adjust the duration for the desired speed */
+      }
     
     .slider-filled {
         height: 100%;
@@ -161,7 +165,120 @@
         left: 0;
         width: 0;
     }
-    
+    .detailed-options.swing-in-top-fwd {
+        display: flex;
+    }
+    .detailed-options {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 28rem;
+        margin: auto;
+        z-index: 11!important;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,.5);
+        opacity: 0;
+    }
+    .swing-in-top-fwd {
+        animation: swing-in-top-fwd .5s cubic-bezier(.175,.885,.32,1.275) both;
+    }
+    .detailed-options-container {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: hsla(0,0%,100%,.9);
+        border-radius: 3px;
+        min-width: 50%;
+        padding: 3rem 7rem;
+        z-index: 5!important;
+        max-width: 112rem;
+    }
+    .hvr-spin {
+        transition: .2s ease-in-out;
+    }
+    .cta-close, .cta-submit {
+        font-family: FuturaPTLight;
+        cursor: pointer;
+    }
+    .cta-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 4rem;
+        color: #2c3e50;
+        padding: 1.5rem;
+        z-index: 2;
+        line-height: .5;
+        max-width: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .question-container {
+        margin-bottom: 1rem;
+    }
+    .detailed-options .slider-advance-question {
+        font-family: FuturaPTHeavy;
+        font-size: 1.95rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+    .cslider-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .cs-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 1.4;
+    }
+    .detailed-options .slider-question {
+        font-family: FuturaPTMedium;
+        font-size: 1.6rem;
+        text-align: center;
+        color: #333;
+        line-height: 1.31;
+        letter-spacing: .3px;
+        margin-bottom: 1rem;
+    }
+    .cslider {
+        margin: 1rem;
+    }
+    .rs-container, .rs-control {
+        position: relative;
+    }
+    .rs-control {
+        outline: 0 none;
+    }
+    .cta-hvr {
+        overflow-x: clip;
+    }
+    .cta-save {
+        position: relative;
+        font-family: FuturaPTHeavy;
+        display: inline-flex;
+        display: -webkit-inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        border-radius: 0;
+        cursor: pointer;
+        font-weight: 700;
+        color: #fff;
+        background-color: #ff9000;
+        padding: 0.5rem 2rem;
+        margin: 1rem 0;
+        text-transform: uppercase;
+    }
     .slider-thumb {
         width: 30px;
         height: 30px;
@@ -723,6 +840,10 @@
         border-radius: 5px;
         position: relative;
     }
+    .slider {
+        display: flex;
+        transition: transform 0.3s ease; /* Adjust the duration for the desired speed */
+      }
     .min-value{
         display: none;
     }
@@ -1195,6 +1316,121 @@
     .arrow.next {
         right: 2%;
         transform: translateY(-50%) rotateY(180deg);
+    }
+    .detailed-options.swing-in-top-fwd {
+        display: flex;
+    }
+    .detailed-options {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 28rem;
+        margin: auto;
+        z-index: 11!important;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,.5);
+        opacity: 0;
+    }
+    .swing-in-top-fwd {
+        animation: swing-in-top-fwd .5s cubic-bezier(.175,.885,.32,1.275) both;
+    }
+    
+    .detailed-options-container {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: hsla(0,0%,100%,.9);
+        border-radius: 3px;
+        min-width: 50%;
+        padding: 3rem 7rem;
+        z-index: 5!important;
+        max-width: 112rem;
+    }
+    .hvr-spin {
+        transition: .2s ease-in-out;
+    }
+    .cta-close, .cta-submit {
+        font-family: FuturaPTLight;
+        cursor: pointer;
+    }
+    .cta-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 4rem;
+        color: #2c3e50;
+        padding: 1.5rem;
+        z-index: 2;
+        line-height: .5;
+        max-width: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .question-container {
+        margin-bottom: 1rem;
+    }
+    .detailed-options .slider-advance-question {
+        font-family: FuturaPTHeavy;
+        font-size: 1.95rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+    .cslider-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .cs-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 1.4;
+    }
+    .detailed-options .slider-question {
+        font-family: FuturaPTMedium;
+        font-size: 1.6rem;
+        text-align: center;
+        color: #333;
+        line-height: 1.31;
+        letter-spacing: .3px;
+        margin-bottom: 1rem;
+    }
+    .cslider {
+        margin: 1rem;
+    }
+    .rs-container, .rs-control {
+        position: relative;
+    }
+    .rs-control {
+        outline: 0 none;
+    }
+    .cta-hvr {
+        overflow-x: clip;
+    }
+    .cta-save {
+        position: relative;
+        font-family: FuturaPTHeavy;
+        display: inline-flex;
+        display: -webkit-inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        border-radius: 0;
+        cursor: pointer;
+        font-weight: 700;
+        color: #fff;
+        background-color: #ff9000;
+        padding: 0.5rem 2rem;
+        margin: 1rem 0;
+        text-transform: uppercase;
     }
     .arrow {
         position: fixed;

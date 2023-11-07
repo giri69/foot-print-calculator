@@ -95,10 +95,10 @@
           </div>
         </div>
        
-            <a href="pg2.html" target="_blank" class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
+            <a href="pg2.html" class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
                 
             </a>
-            <a href="pg-4.html" target="_blank" class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
+            <a href="pg-4.html"  class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
                 
             </a>
         
@@ -109,43 +109,55 @@
       </div>
     </div>
     <script>
-        function hello(){
-            console.log("hello");
-        }
-      const slider = document.querySelector(".slider");
-      const filled = document.querySelector(".slider-filled");
-      const thumb = document.querySelector(".slider-thumb");
+        
+        const slider = document.querySelector(".slider");
+const filled = document.querySelector(".slider-filled");
+const thumb = document.querySelector(".slider-thumb");
 
-      let isDragging = false;
+let isDragging = false;
 
-      slider.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        updateSlider(e);
-      });
+slider.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  updateSlider(e);
+});
 
-      document.addEventListener("mousemove", (e) => {
-        if (isDragging) {
-          updateSlider(e);
-        }
-      });
+slider.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  updateSlider(e.touches[0]); // Use the first touch for simplicity
+});
 
-      document.addEventListener("mouseup", () => {
-        isDragging = false;
-      });
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    updateSlider(e);
+  }
+});
 
-      function updateSlider(e) {
-        const sliderRect = slider.getBoundingClientRect();
-        const offsetX = e.clientX - sliderRect.left;
-        const sliderWidth = sliderRect.width;
-        const percentage = Math.min(
-          100,
-          Math.max(0, (offsetX / sliderWidth) * 100)
-        );
+document.addEventListener("touchmove", (e) => {
+  if (isDragging) {
+    e.preventDefault(); // Prevent scrolling while sliding
+    updateSlider(e.touches[0]);
+  }
+});
 
-        filled.style.width = percentage + "%";
-        thumb.style.left = percentage + "%";
-        // percentageDisplay.textContent = percentage.toFixed(0) + "%";
-        console.log(percentage);
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+document.addEventListener("touchend", () => {
+  isDragging = false;
+});
+
+function updateSlider(e) {
+  const sliderRect = slider.getBoundingClientRect();
+  const offsetX = e.clientX - sliderRect.left;
+  const sliderWidth = sliderRect.width;
+  const percentage = Math.min(
+    100,
+    Math.max(0, (offsetX / sliderWidth) * 100)
+  );
+
+  filled.style.width = percentage + "%";
+  thumb.style.left = percentage + "%";
 
         var y=document.getElementById("frst")
         const per = percentage;

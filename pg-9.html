@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style7.css" />
+    <link rel="stylesheet" href="style9.css" />
   </head>
   <body
     class="body height-base lang-en sponsor-FR dir-ltr section-quiz housing-type page-Type device-Desktop"
@@ -20,8 +20,8 @@
               <li class="inactive m"></li>
               <li class="inactive m"></li>
               <li class="inactive m"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
               <li class="inactive"></li>
               <li class="inactive"></li>
               <li class="inactive"></li>
@@ -65,64 +65,43 @@
         </div>
         <div class="wrapper">
           <div class="content fade-in-fwd-with-delay">
-            <p class="caption">Housing</p>
+            <p class="caption">Food</p>
             <div class="question-container">
               <h1 class="main-title">
-               Do you have electricity in your home?
-              </h1>
-            </div>
-            <div class="slider-container">
-              <div class="slider-wrapper">
-                <div class="hslider" id="cat">
-                  <div class="min-value">NO</div>
-                  <label class="switch">
-                    <input type="checkbox" id="btb">
-                    <span class="sliderr round"></span>
-                  </label>
-                  <div class="max-value">YES</div>
-                </div>
-                <div class="sliderValue">
-                 
-                </div>
-              </div>
-              
-            </div>
-          </div>
-          <div class="content fade-in-fwd-with-delay">
-            <div class="question-container">
-              <h1 class="main-title">
-                How energy efficient is your home?
+                Compared to your neighbours, how <br>
+                much trash do you generate?
               </h1>
             </div>
             <div class="slider-container" style="min-height: 11rem">
               <div class="slider-wrapper">
                 <div class="hslider">
-                  <div class="min-value">HARDLY</div>
+                  <div class="min-value">MUCH LESS</div>
                   <div class="slider">
                     <div class="slider-filled"></div>
                     <div class="slider-thumb"></div>
                   </div>
-                  <div class="max-value">VERY </div>
+                  <div class="max-value">MUCH MORE</div>
                 </div>
                 <div class="sliderValue">
-                  <div class="value" id="frst">Very inefficient</div>
-                  <div class="subValue" id="scnd">(poor insulation,few LED lamps, heating/cooling system used often)</div>
+                  <div class="value" id="frst">Much less</div>
                 </div>
               </div>
-              
+              <div class="detailLink">
+                <a class="cta-bg-up">ADD DETAILS TO IMPROVE ACCURACY</a>
+              </div>
             </div>
           </div>
         </div>
-        <a href="pg-6.html"  class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
+        
+        <a href="pg-8.html" class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
                 
         </a>
-        <a href="pg-8.html" class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
+        <a href="pg-10.html"  class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
             
         </a>
-        
         <footer class="footer-container">
-            <div class="grass" id="btg"
-              style="background-image: url('assets/HousingElectricityOffDesktop.png')"></div>
+            <div class="grass"
+              style="background-image: url('assets/HousingTrashDesktop.png')"></div>
           </footer>
       </div>
     </div>
@@ -222,43 +201,29 @@ function updateSlider(e) {
 
 
         var y=document.getElementById("frst")
-        var x=document.getElementById("scnd")
         const per = percentage;
 
     if (per < 10) {
-        y.innerHTML="Very inefficient"
-        x.innerHTML = "(poor insulation,few LED lamps, heating/cooling system used often)";
+        y.innerHTML="Much less"
+       
     } else if (per>10 && per <= 25) {
-        y.innerHTML="Below average"
-        x.innerHTML = "(inefficient lighting, standard appliances)";
+        y.innerHTML="Less"
+       
     } else if ( per <= 50) {
-        y.innerHTML="Average"
-        x.innerHTML = "(modern appliances, climate controls)";
+        y.innerHTML="Same"
+       
     }
         
        else if (per > 50 && per <= 75) {
-        y.innerHTML="Above average"
-        x.innerHTML = "(well insulated,efficient lighting and appliances,careful use)";
+        y.innerHTML="More"
+       
     } else
     {
-        y.innerHTML="Efficiency-centered design"
-        x.innerHTML = "(passive heating/cooling advanced temperature control and ventilation)";
+        y.innerHTML="Much More"
+      
 
     }
       }
-      const backgroundToggle = document.getElementById('btb');
-      const elementToChange = document.getElementById('btg');
-
-backgroundToggle.addEventListener('change', () => {
-    if (backgroundToggle.checked) {
-        
-        elementToChange.style.backgroundImage = "url('assets/HousingElectricityOnDesktop.png')";
-    } else {
-        
-        elementToChange.style.backgroundImage = "url('assets/HousingElectricityOffDesktop.png')";
-       
-    }
-});
     </script>
   </body>
 </html>

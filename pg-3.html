@@ -155,6 +155,10 @@ function updateSlider(e) {
     100,
     Math.max(0, (offsetX / sliderWidth) * 100)
   );
+  let perr=Math.floor(percentage)
+
+localStorage.setItem('pg-3-per:',perr);
+
 
   filled.style.width = percentage + "%";
   thumb.style.left = percentage + "%";

@@ -184,7 +184,11 @@
             break;
         }
       });
-      
+
+      function clearLocalStorageOnLoad() {
+            localStorage.clear();
+        }
+        window.onload = clearLocalStorageOnLoad;
     </script>
   </body>
 </html>

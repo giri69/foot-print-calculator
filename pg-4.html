@@ -76,7 +76,7 @@
                 <li class="radio">
                   <label>
                     Freestanding, no running water 
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:1;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;"></span>
                   </label>
                 </li>
@@ -90,21 +90,21 @@
                 <li class="radio">
                   <label>
                     Multi-storey apartment
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:3;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;"></span>
                   </label>
                 </li>
                 <li class="radio">
                   <label>
                     Duplex, row house or building with 2-4 housing units
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:4;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;"></span>
                   </label>
                 </li>
                 <li class="radio">
                   <label>
                     Luxury condominium
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:5;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;"></span>
                   </label>
                 </li>
@@ -124,11 +124,20 @@
         <footer class="footer-container">
             <div class="grass"
               style="background-image: url('assets/HousingTypeDesktop.png')"></div>
-          </footer>
+          </footer> 
       </div>
     </div>
     <script>
-       
+       const radioButtons = document.getElementsByName("housing");
+
+
+radioButtons.forEach(function (radioButton) {
+  radioButton.addEventListener("change", function () {
+    if (this.checked) {
+      localStorage.setItem("pg-4-checked",this.style.order);
+    }
+  });
+});
     </script>
   </body>
 </html>

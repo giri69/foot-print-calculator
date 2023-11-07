@@ -76,7 +76,7 @@
                 <li class="radio">
                   <label>
                     Straw/bamboo
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:1;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;" id="1"></span>
                   </label>
                 </li>
@@ -90,21 +90,21 @@
                 <li class="radio">
                   <label>
                     Steel/other
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:3;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;" id="3"></span>
                   </label>
                 </li>
                 <li class="radio">
                   <label>
                     Wood
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:4;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;" id="4"></span>
                   </label>
                 </li>
                 <li class="radio">
                   <label>
                     Adobe
-                    <input type="radio" name="housing" style="order:2;" class="ng-valid ng-dirty ng-touched">
+                    <input type="radio" name="housing" style="order:5;" class="ng-valid ng-dirty ng-touched">
                     <span class="checkround" style="order: 1;" id="5"></span>
                   </label>
                 </li>
@@ -157,6 +157,17 @@
         radioButton5.addEventListener("click", function() {
                 backgroundChangeDiv.style.backgroundImage = "url('assets/HousingMaterialAdobeDesktop.png')"; 
         });
+
+
+
+ const radioButtons = document.getElementsByName("housing");
+radioButtons.forEach(function (radioButton) {
+  radioButton.addEventListener("change", function () {
+    if (this.checked) {
+      localStorage.setItem("pg-5-checked:",this.style.order);
+    }
+  });
+});
 
         
     </script>

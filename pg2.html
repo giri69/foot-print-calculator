@@ -199,47 +199,7 @@ function updateSlider(e) {
   filled.style.width = percentage + "%";
   thumb.style.left = percentage + "%";
   
-  // Your code to update the labels based on the percentage
-  // ...)
-  let perr=Math.floor(percentage)
-  console.log(perr)
-
-
-
-
-  if (!isNaN(perr)) 
-  {
-    // Load the JSON file
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        // Update the JSON data with the new percentage
-        data[category1][percentage1] = perr;
-
-        // Save the updated JSON data
-        fetch('data.json', {
-          method: 'PUT', // Use POST or PUT method to update the JSON file
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then(() => {
-            console.log('Percentage saved successfully.');
-          })
-          .catch(error => {
-            console.error('Error saving percentage:', error);
-          });
-      });
-  } 
-  else 
-  {
-    console.error('Invalid percentage value');
-  }
-
-
-
-
+  
 
 
 
@@ -250,21 +210,26 @@ function updateSlider(e) {
     if (per < 10) {
         y.innerHTML="Never"
         x.innerHTML = "(Vegan)";
+        localStorage.setItem('pg-2-val:',"Never");
     } else if (per>10 && per <= 25) {
         y.innerHTML="Infrequently"
         x.innerHTML = "(vegetarian - eggs/dairy, no meat)";
+        localStorage.setItem('pg-2-val:',"Infrequently");
     } else if ( per <= 50) {
         y.innerHTML="Occasionally"
         x.innerHTML = "(really like veggies - occasional meat, eggs/dairy)";
+        localStorage.setItem('pg-2-val:',"Occasionally");
     }
         
        else if (per > 50 && per <= 75) {
         y.innerHTML="Often"
         x.innerHTML = "(balanced meat/veggies - meat a few times a week, eggs/dairy almost daily)";
+        localStorage.setItem('pg-2-val:',"Often");
     } else
     {
         y.innerHTML="Very Often"
         x.innerHTML = "(Meat Daily)";
+        localStorage.setItem('pg-2-val:',"Very Often");
 
     }
       }

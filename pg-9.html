@@ -159,45 +159,7 @@ function updateSlider(e) {
   // Your code to update the labels based on the percentage
   // ...)
   let perr=Math.floor(percentage)
-  console.log(perr)
-
-
-
-
-  if (!isNaN(perr)) 
-  {
-    // Load the JSON file
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        // Update the JSON data with the new percentage
-        data[category1][percentage1] = perr;
-
-        // Save the updated JSON data
-        fetch('data.json', {
-          method: 'PUT', // Use POST or PUT method to update the JSON file
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then(() => {
-            console.log('Percentage saved successfully.');
-          })
-          .catch(error => {
-            console.error('Error saving percentage:', error);
-          });
-      });
-  } 
-  else 
-  {
-    console.error('Invalid percentage value');
-  }
-
-
-
-
-
+  // console.log(perr)
 
 
         var y=document.getElementById("frst")
@@ -205,25 +167,47 @@ function updateSlider(e) {
 
     if (per < 10) {
         y.innerHTML="Much less"
-       
-    } else if (per>10 && per <= 25) {
-        y.innerHTML="Less"
-       
-    } else if ( per <= 50) {
-        y.innerHTML="Same"
-       
-    }
+        localStorage.setItem('pg-9-val:',y.innerHTML);
         
-       else if (per > 50 && per <= 75) {
+      } else if (per>10 && per <= 25) {
+        y.innerHTML="Less"
+        localStorage.setItem('pg-9-val:',y.innerHTML);
+        
+      } else if ( per <= 50) {
+        y.innerHTML="Same"
+        localStorage.setItem('pg-9-val:',y.innerHTML);
+        
+      }
+      
+      else if (per > 50 && per <= 75) {
         y.innerHTML="More"
-       
-    } else
-    {
+        localStorage.setItem('pg-9-val:',y.innerHTML);
+        
+      } else
+      {
         y.innerHTML="Much More"
+        localStorage.setItem('pg-9-val:',y.innerHTML);
       
 
     }
       }
+      const jsonData = {};
+
+
+for (const key in localStorage) {
+  if (localStorage.hasOwnProperty(key)) {
+    try {
+     
+      jsonData[key] = JSON.parse(localStorage.getItem(key));
+    } catch (error) {
+      
+      jsonData[key] = localStorage.getItem(key);
+    }
+  }
+}
+
+
+console.log(jsonData);
     </script>
   </body>
 </html>

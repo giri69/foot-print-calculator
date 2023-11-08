@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style11.css" />
+  </head>
+  <body
+    class="body height-base lang-en sponsor-FR dir-ltr section-quiz housing-type page-Type device-Desktop"
+  >
+    <div class="bg">
+      <div class="quiz-layout">
+        <div id="guideModel" class="modal fade show">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                
+                <div class="model-text text-center">
+                  <h3><b>What about Population</b></h3>
+                  <p>We ask because we only count your fraction of your housing Footprint. However, humanity’s Footprint is the product of people’s Footprints and how many we are. Check out this video explaining why both consumption and population matter.</p>
+                </div>
+                <div id="xbtn" class="cta-close hvr-spin">×</div>
+              </div>
+            </div>
+            
+          </div>
+        <div class="quiz-header">
+          <div class="lines-container">
+            <ul id="liner" class="lines">
+              <li class="active  m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactiv m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive"></li>
+              <li class="inactive"></li>
+              <li class="inactive"></li>
+            </ul>
+          </div>
+          <div class="logo-container">
+            <div class="logo-main">
+              <ul>
+                <li class="flip-in-x">
+                  <a href="https://www.footprintnetwork.org/" target="_blank">
+                    <div class="powered-by">
+                      <span class="blue"> Created and powered by </span>
+                      <img src="assets/logo-GFN-blue.png" alt="" />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="logo-sponsor">
+              <ul>
+                <li>
+                  <div class="cta donate capitalize cta-hvr flip-in-x">
+                    <a
+                      href="https://connect.clickandpledge.com/w/Form/3dd0f73e-d942-4869-a6f6-5eb00c0bebcb"
+                      >Donate</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cloudcont">
+          <div class="clouds">
+            <img src="assets/cloud1.png" alt="" class="cloud c1" />
+            <img src="assets/cloud2.png" alt="" class="cloud c2" />
+            <img src="assets/cloud3.png" alt="" class="cloud c3" />
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="content fade-in-fwd-with-delay">
+            <p class="caption">TRANSPORTATION</p>
+            <div class="question-container stack-top">
+              <h1 class="main-title">What is the average fuel economy of the vehicals you use most often?
+               
+              </h1>
+            </div>
+            <div class="slider-containerr" style="min-height: 11rem">
+                <div class="motor-bike fade-in">
+                    <img src="assets/car.png" alt="">
+                 </div>
+                <div class="slider-wrapper">
+                  <div class="hslider">
+                    <div class="min-value">INEFFICIENT</div>
+                    <div class="slider" id="cc">
+                      <div class="slider-filled" id="cb"></div>
+                      <div class="slider-thumb" id="ce"></div>
+                    </div>
+                    <div class="max-value">EFFICIENT OR <br>ELECTRIC</div>
+                  </div>
+                  <div class="sliderValuer">
+                    <div class="valuer" id="frst">24 liters / 100 kms </div>
+                    <div class="subValuer" id="scnd">10 miles / gallon</div>
+                  </div>
+                </div>
+                
+              </div>
+                 
+            <div class="question-container">
+               
+            </div>
+            <div class="slider-containerr" style="min-height: 11rem">
+                <div class="motor-bike fade-in">
+                    <img src="assets/motorbike.png" alt="">
+                 </div>
+                <div class="slider-wrapper">
+                  <div class="hslider">
+                    <div class="min-value">INEFFICIENT</div>
+                    <div class="slider" id="cc2">
+                      <div class="slider-filled" id="cb2"></div>
+                      <div class="slider-thumb" id="ce2"></div>
+                    </div>
+                    <div class="max-value">EFFICIENT OR <br>ELECTRIC</div>
+                  </div>
+                  <div class="sliderValuer">
+                    <div class="valuer" id="frst2">9 liters / 100 kms</div>
+                    <div class="subValuer" id="scnd2">25 miles / gallon</div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              
+          </div>
+        </div>
+       
+            <a href="pg-10.html"  class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
+                
+            </a>
+            <a href="pg-12.html" class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
+                
+            </a>
+        <footer class="footer-container">
+            <div class="grass" id="ii"
+              style="background-image: url('assets/TransportationFuelDesktop.png')"></div>
+          </footer>
+      </div>
+    </div>
+    <script>
+
+       
+        
+    
+
+      document.getElementById("xbtn").addEventListener("click", function () {
+        var element = document.getElementById("guideModel");
+        if (element.style.display === "none") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
+     
+
+       const sliders = document.querySelectorAll(".slider");
+        const filled = document.querySelectorAll(".slider-filled");
+        const thumb = document.querySelectorAll(".slider-thumb");
+
+        sliders.forEach((slider, index) => {
+            let isDragging = false;
+
+            slider.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                updateSlider(e, index);
+            });
+
+            slider.addEventListener("touchstart", (e) => {
+                isDragging = true;
+                updateSlider(e.touches[0], index); // Use the first touch for simplicity
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                if (isDragging) {
+                    updateSlider(e, index);
+                }
+            });
+
+            document.addEventListener("touchmove", (e) => {
+                if (isDragging) {
+                    e.preventDefault(); // Prevent scrolling while sliding
+                    updateSlider(e.touches[0], index);
+                }
+            });
+
+            document.addEventListener("mouseup", () => {
+                isDragging = false;
+            });
+
+            document.addEventListener("touchend", () => {
+                isDragging = false;
+            });
+        });
+
+        function updateSlider(e, index) {
+            const sliderRect = sliders[index].getBoundingClientRect();
+            const offsetX = e.clientX - sliderRect.left;
+            const sliderWidth = sliderRect.width;
+            const percentage = Math.min(
+                100,
+                Math.max(0, (offsetX / sliderWidth) * 100)
+            );
+
+            filled[index].style.width = percentage + "%";
+            thumb[index].style.left = percentage + "%";
+
+
+            
+
+                if (index === 0) 
+                {
+                  const y2 = document.getElementById("frst");
+                const x2 = document.getElementById("scnd");
+                const per2 = Math.floor(percentage);
+              if(per2==0)
+              {
+
+                  y2.innerHTML= "24 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+              }
+              else if(per2>1 && per2<=3)
+              {
+
+                  y2.innerHTML= "21 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>3 && per2<=5)
+                {
+                  
+                  y2.innerHTML= "20 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>5 && per2<=7)
+                {
+                  
+                  y2.innerHTML= "19 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>7 && per2<=10)
+                {
+                  
+                  y2.innerHTML= "16 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>10 && per2<=15)
+                {
+                  
+                  y2.innerHTML= "14 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>15 && per2<=20)
+                {
+                  
+                  y2.innerHTML= "11 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>20 && per2<=25)
+                {
+                  
+                  y2.innerHTML= "8 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>25 && per2<=30)
+                {
+                  
+                  y2.innerHTML= "6 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>30 && per2<=38)
+                {
+                  
+                  y2.innerHTML= "5 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>38 && per2<=45)
+                {
+                  
+                  y2.innerHTML= "4 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else if(per2>45 && per2<=55)
+                {
+                  
+                  y2.innerHTML= "3 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+                }
+                else
+                {
+                  y2.innerHTML= "2 liters / 100 kms";
+                localStorage.setItem('pg-11-val-1:',y2.innerHTML);
+
+              }
+             
+              x2.innerHTML=Math.floor(per2*1.5)+" miles / gallon";
+              } 
+              else if (index === 1) 
+              {
+              const y2 = document.getElementById("frst2");
+              const x2 = document.getElementById("scnd2");
+              const per2 = Math.floor(percentage);
+             
+              if(per2==0)
+              {
+
+                  y2.innerHTML= "9 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+                }
+                else if(per2>0 && per2<=5)
+                {
+                  
+                  y2.innerHTML= "8 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+                }
+                else if(per2>5 && per2<=15)
+                {
+                  
+                  y2.innerHTML= "7 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+                }
+                else if(per2>15 && per2<=30)
+                {
+                  
+                  y2.innerHTML= "6 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+                }
+                else if(per2>30 && per2<=40)
+                {
+                  
+                  y2.innerHTML= "5 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+                }
+                else if(per2>40 && per2<=50)
+                {
+                  
+                  y2.innerHTML= "4 liters / 100 kms";
+                  localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+                }
+                
+              else if(per2>40 && per2<=55)
+              {
+                
+                y2.innerHTML= "3 liters / 100 kms";
+                localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+              }
+              else
+              {
+                y2.innerHTML= "2 liters / 100 kms";
+                localStorage.setItem('pg-11-val-2:',y2.innerHTML);
+
+              }
+
+              x2.innerHTML=Math.floor(per2*1.5)+" miles / gallon";
+                
+            }
+
+        }
+    </script>
+    <script src="js.js"></script>
+  </body>
+</html>

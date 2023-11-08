@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style9.css" />
+    <link rel="stylesheet" href="style12.css" />
   </head>
   <body
     class="body height-base lang-en sponsor-FR dir-ltr section-quiz housing-type page-Type device-Desktop"
@@ -22,9 +22,9 @@
               <li class="inactive m"></li>
               <li class="inactive m"></li>
               <li class="inactive m"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
               <li class="inactive"></li>
               <li class="inactive"></li>
             </ul>
@@ -65,47 +65,49 @@
         </div>
         <div class="wrapper">
           <div class="content fade-in-fwd-with-delay">
-            <p class="caption">HOUSING</p>
+            <p class="caption">TRANSPORTATION</p>
             <div class="question-container">
               <h1 class="main-title">
-                Compared to your neighbours, how <br>
-                much trash do you generate?
+                When you travel by car, how often do you carpool?
               </h1>
+              
             </div>
             <div class="slider-container" style="min-height: 11rem">
               <div class="slider-wrapper">
                 <div class="hslider">
-                  <div class="min-value">MUCH LESS</div>
+                  <div class="min-value">NEVER</div>
                   <div class="slider">
                     <div class="slider-filled"></div>
                     <div class="slider-thumb"></div>
                   </div>
-                  <div class="max-value">MUCH MORE</div>
+                  <div class="max-value">ALWAYS</div>
                 </div>
                 <div class="sliderValue">
-                  <div class="value" id="frst">Much less</div>
+                  <div class="value" id="frst">0%</div>
+                  <div class="subValue" id="scnd">Never</div>
                 </div>
               </div>
              
             </div>
           </div>
         </div>
-        
-        <a href="pg-8.html" class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
+       
+            <a href="pg-11.html" class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
                 
-        </a>
-        <a href="pg-10.html"  class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
-            
-        </a>
+            </a>
+            <a href="pg-13.html"  class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
+                
+            </a>
+        
         <footer class="footer-container">
             <div class="grass"
-              style="background-image: url('assets/HousingTrashDesktop.png')"></div>
+              style="background-image: url('assets/TransportationCarpoolDesktop.png')"></div>
           </footer>
       </div>
     </div>
     <script>
-       
-       const slider = document.querySelector(".slider");
+        
+        const slider = document.querySelector(".slider");
 const filled = document.querySelector(".slider-filled");
 const thumb = document.querySelector(".slider-thumb");
 
@@ -150,62 +152,47 @@ function updateSlider(e) {
     100,
     Math.max(0, (offsetX / sliderWidth) * 100)
   );
+  let perr=Math.floor(percentage)
+
+localStorage.setItem('pg-3-per:',perr);
+
 
   filled.style.width = percentage + "%";
   thumb.style.left = percentage + "%";
-  
-  // Your code to update the labels based on the percentage
-  // ...)
-  let perr=Math.floor(percentage)
-  // console.log(perr)
-
 
         var y=document.getElementById("frst")
-        const per = percentage;
-
-    if (per < 10) {
-        y.innerHTML="Much less"
-        localStorage.setItem('pg-9-val:',y.innerHTML);
-        
-      } else if (per>10 && per <= 25) {
-        y.innerHTML="Less"
-        localStorage.setItem('pg-9-val:',y.innerHTML);
-        
-      } else if ( per <= 50) {
-        y.innerHTML="Same"
-        localStorage.setItem('pg-9-val:',y.innerHTML);
-        
+        var x=document.getElementById("scnd")
+        const per = Math.floor(percentage);
+       if(per<20)
+       {
+        x.innerHTML=("Never");
+        localStorage.setItem('pg-12-val:',x.innerHTML);
       }
-      
-      else if (per > 50 && per <= 75) {
-        y.innerHTML="More"
-        localStorage.setItem('pg-9-val:',y.innerHTML);
-        
-      } else
+      else if(per>20 && per<=40)
       {
-        y.innerHTML="Much More"
-        localStorage.setItem('pg-9-val:',y.innerHTML);
-      
-
-    }
+        x.innerHTML=("Infrequently");
+        localStorage.setItem('pg-12-val:',x.innerHTML);
       }
-      const jsonData = {};
+      else if(per>40 && per<=60)
+      {
+        x.innerHTML=("Occasionally");
+        localStorage.setItem('pg-12-val:',x.innerHTML);
+        }
+        else if(per>60 && per<=80)
+        {
+          x.innerHTML=("Often");
+          localStorage.setItem('pg-12-val:',x.innerHTML);
+        }
+        else
+        {
+          x.innerHTML=("Always");
+          localStorage.setItem('pg-12-val:',x.innerHTML);
 
-
-for (const key in localStorage) {
-  if (localStorage.hasOwnProperty(key)) {
-    try {
-     
-      jsonData[key] = JSON.parse(localStorage.getItem(key));
-    } catch (error) {
+       }
       
-      jsonData[key] = localStorage.getItem(key);
-    }
-  }
-}
-
-
-console.log(jsonData);
+       y.innerHTML=Math.floor(per)+"%"
+    
+      }
     </script>
   </body>
 </html>

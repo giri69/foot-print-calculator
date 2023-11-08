@@ -90,6 +90,7 @@
 
 }
 @media (min-width: 799px){
+
     body, html {
         position: relative;
         min-height: 100vh;
@@ -103,16 +104,10 @@
     .bg{
         height: 100vh;
         width: 100vw;
-        /* overflow: hidden; */
-        background: linear-gradient(0deg,#c2d7d9,#faedda);
+        background: linear-gradient(180deg,#c7e8e8,#f8f3de);
+    
     }
     
-    
-    .bg-1 {
-      width: 100vw;
-      min-height: 100vh;
-      
-    }
     
     .detailLink {
         display: flex;
@@ -135,6 +130,17 @@
         
     
     }
+    .motor-bike {
+        position: absolute;
+        left: -6rem;
+        top: 0;
+    }
+    .fade-in {
+        animation: fadeIn .6s cubic-bezier(.39,.575,.565,1) both;
+    }
+     .motor-bike img {
+        max-width: 5rem;
+    }
     .nvr
     {
         margin-right: 39px;
@@ -144,19 +150,15 @@
         width: 71px;
     }
     
-    .slider {
+    .slider ,.sliderr{
         width: 25vw;
         height: 15px;
         background:linear-gradient(90deg,#40485c,#849398);
         border-radius: 5px;
         position: relative;
     }
-    .slider {
-        display: flex;
-        transition: transform 0.3s ease; /* Adjust the duration for the desired speed */
-      }
     
-    .slider-filled {
+    .slider-filled ,.slider-filledr{
         height: 100%;
         background: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
         border-radius: 5px;
@@ -166,7 +168,7 @@
         width: 0;
     }
     
-    .slider-thumb {
+    .slider-thumb ,.slider-thumbr{
         width: 30px;
         height: 30px;
         border: 1px solid black;
@@ -399,35 +401,11 @@
     .quiz-layout .wrapper {
        
         display: flex;
-        top: 5rem;
-         line-height: 3;
+        top: -2rem;
+         
             z-index: 99;
            
         justify-content: center;
-    }
-    a{
-        cursor: pointer;
-    }
-    .arrow.prev {
-        left: 2%;
-        transform: translateY(-50%);
-    }
-    .larrow{
-        height: 47px;
-        width: 45px;
-        position: relative;
-        top: -5vh;
-        background-size: cover;
-    }
-    
-    .rarrow{
-        height: 47px;
-        width: 45px;
-        z-index: 999;
-        margin-left: 96.5vw;
-        top: -11vh;
-        background-size: cover;
-        position: relative;
     }
     .fade-in-fwd-with-delay {
         animation: fade-in-fwd .4s cubic-bezier(.39,.575,.565,1) .5s both;
@@ -512,24 +490,25 @@
         text-align: center;
         color: #2c3e50;
         text-transform: none;
+        font-family: sans-serif;
     }
-    .slider-container {
+    .slider-container,.slider-containerr {
         position: relative;
     }
-    .slider-wrapper {
+    .slider-wrapper,.slider-wrapperr {
         width: 100%;
         min-height: 10.5rem;
     }
-    .content .switch-container, .slider-wrapper {
+    .content .switch-container, .slider-wrapper,.content .switch-containerr, .slider-wrapperr {
         position: relative;
     }
-    .hslider {
+    .hslider ,.hsliderr{
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 5rem;
     }
-    .hslider .min-value {
+    .hslider .min-value,.hsliderr .min-valuer {
         font-size: 1.5rem;
         max-width: 8rem;
         min-width: 14rem;
@@ -541,7 +520,7 @@
         letter-spacing: .9px;
         line-height: 23px;
     }
-    .hslider .max-value, .hslider .min-value {
+    .hslider .max-value, .hslider .min-value ,.hsliderr .max-valuer, .hsliderr .min-valuer{
         font-size: 1.5rem;
         max-width: 8rem;
         min-width: 14rem;
@@ -553,7 +532,7 @@
         letter-spacing: .9px;
         line-height: 23px;
     }
-    .sliderValue {
+    .sliderValue,.sliderValuer {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -563,14 +542,14 @@
         color: #2c3e50;
         margin: auto;
     }
-    .sliderValue .value {
+    .sliderValue .value,.sliderValuer .valuer {
         font-family: sans-serif;
         font-size: 1.6rem;
         font-weight: 900;
         line-height: 1.11;
         letter-spacing: .8px;
     }
-    .sliderValue .subValue {
+    .sliderValue .subValue,.sliderValuer .subValuer {
         font-family: sans-serif;
         font-size: 1.4rem;
         line-height: 1.31;
@@ -618,7 +597,7 @@
         left: 0;
         height: 50vh;
         overflow: visible;
-        min-height: 30rem;
+        min-height: 45rem;
     }
     .footer-container {
         position: absolute;
@@ -633,12 +612,11 @@
         background-repeat: no-repeat;
     }
     .footer-container .grass {
-        height: 77vh;
-        bottom: -139px;
+        height: 70vh;
         background-size: cover;
         background-position: center;
-        max-height: 75vh;
-        /* overflow: hidden; */
+        max-height: 70vh;
+        overflow: hidden;
     }
     .arrow.next {
         right: 2%;
@@ -678,7 +656,374 @@
     a{
         cursor: pointer;
     }
+    .arrow.prev {
+        left: 2%;
+        transform: translateY(-50%);
+    }
+    .larrow{
+        height: 47px;
+        width: 45px;
+        position: relative;
+        top: -26vh;
+        background-size: cover;
+    }
     
+    .rarrow{
+        height: 47px;
+        width: 45px;
+        z-index: 999;
+        margin-left: 96.5vw;
+        top: -32vh;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .slide-in-br {
+        animation: slide-in-br .5s cubic-bezier(.25,.46,.45,.94) both;
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        outline: 0;
+    }
+    .fade {
+        transition: opacity .15s linear;
+    }
+    .modal-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 4rem);
+        margin: 0 auto;
+    }
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    .modal.fade .modal-dialog {
+        transition: transform .3s ease-out;
+        transform: translateY(-50px);
+    }
+    .modal-content {
+        width: 100vh;
+        height: 100vh;
+        max-width: 60rem;
+        max-height: 60rem;
+    } 
+    .modal-content {
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60rem;
+        width: 60rem;
+        max-height: 95vh;
+        max-width: 95vh;
+        border: none;
+        border-radius: 50%;
+        padding: 5rem;
+    }
+    .cta {
+        position: relative;
+        height: auto;
+        cursor: pointer;
+        display: inline-block;
+        box-shadow: 0 8px 15px rgba(0,0,0,.2);
+        border: none;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    .main-title {
+        animation-name: fadeInRight;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+    .main-title {
+        position: relative;
+        display: block;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 3.5rem;
+        z-index: 2;
+    }
+    .main-title{
+        position: relative;
+        color: #2c3e50;
+        text-align: center;
+        z-index: 1;
+    }
+    .modal-content .desc-1{
+        animation-name: fadeInLeft;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+    .modal-content .desc-2 {
+        animation-name: fadeInRight;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+    .cta a {
+        font-family: sans-serif;
+        display: block;
+        font-size: 1.8rem;
+        line-height: 1.33;
+        background-image: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
+        letter-spacing: 1.4px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+    }
+    a {
+        cursor: pointer;
+    }
+    .modal-content {
+        width: 100vh;
+        height: 100vh;
+        max-width: 60rem;
+        max-height: 60rem;
+    }
+     .modal-content {
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60rem;
+        width: 60rem;
+        max-height: 95vh;
+        max-width: 95vh;
+        border: none;
+        border-radius: 50%;
+        padding: 5rem;
+    }
+    .cta {
+        position: relative;
+        height: auto;
+        cursor: pointer;
+        display: inline-block;
+        box-shadow: 0 8px 15px rgba(0,0,0,.2);
+        border: none;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    span.info {
+        position: relative;
+        display: inline-block;
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-left: 0.5rem;
+        background-image: url(/assets/icon-info.png);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 100;
+    }
+    #guideModel {
+        background-color: rgba(0,0,0,.5);
+        top: 0rem;
+        overflow: hidden;
+    }
+     .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        outline: 0;
+    }
+    .fade {
+        transition: opacity .15s linear;
+    }
+    #guideModel .modal-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 4rem);
+        margin: 0 auto;
+    }
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    .modal.fade .modal-dialog {
+        transition: transform .3s ease-out;
+        transform: translateY(-50px);
+    }
+    
+    .modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        min-height: calc(100% - 1rem);
+    }
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 0.5rem;
+        pointer-events: none;
+    }
+    #guideModel .modal-content {
+        width: 100vh;
+        height: 100vh;
+        max-width: 40rem;
+        max-height: 40rem;
+    }
+    #guideModel .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    #guideModel .modal-content .image {
+        display: block;
+        width: 10rem;
+        height: 10rem;
+    }
+    .spin-slow {
+        animation: spin 10s linear infinite;
+    }
+    #guideModel .modal-content .image img {
+        width: 100%;
+    }
+    img, svg {
+        vertical-align: middle;
+    }
+    img {
+        border-style: none;
+    }
+    #guideModel .model-text {
+        padding: 0 15px;
+    }
+    .text-center {
+        text-align: center!important;
+    }
+    #guideModel .model-text h3 {
+        margin-top: 72px;
+        font-family: sans-serif;
+        font-size: 2.59rem;
+    }
+     h3 {
+        /* margin-top: 50px; */
+        font-size: 1.75rem;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    #guideModel .model-text p {
+        font-size: 24px;
+        font-family: sans-serif;
+        padding: 0 1.5rem;
+        margin-top: 50px;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    #guideModel .cta-close {
+        position: relative;
+    }
+    .hvr-spin {
+        transition: .2s ease-in-out;
+    }
+    .cta-close {
+        font-family: sans-serif;
+        cursor: pointer;
+    }
+    .cta-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 4rem;
+        color: #2c3e50;
+        padding: 1.5rem;
+        z-index: 2;
+        line-height: .5;
+        max-width: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #guideModel .guideArrow {
+        position: absolute;
+        top: 6%;
+        right: 7%;
+    }
+    #guideModel .guideArrow img {
+        width: 25vw;
+        transform: rotate(0deg);
+    }
+    #guideModel .guideArrow img {
+        width: 25vw;
+        transform: rotate(0deg);
+    }
+    .img-fluid {
+        max-width: 100%;
+        position: relative;
+         top:140px;
+        height: auto;
+    }
 }
 @media (max-width:799px){
     body, html {
@@ -694,15 +1039,19 @@
     .bg{
         height: 100vh;
         width: 100vw;
-        /* overflow: hidden; */
-        background: linear-gradient(0deg,#c2d7d9,#faedda);
+        background: linear-gradient(180deg,#c7e8e8,#f8f3de);
+    
     }
-    
-    
-    .bg-1 {
-      width: 100vw;
-      min-height: 100vh;
-      
+    .motor-bike {
+        position: absolute;
+        left: -6rem;
+        top: 0;
+    }
+    .fade-in {
+        animation: fadeIn .6s cubic-bezier(.39,.575,.565,1) both;
+    }
+    .motor-bike img {
+        max-width: 5rem;
     }
     
     .detailLink {
@@ -735,7 +1084,7 @@
         width: 71px;
     }
     
-    .slider {
+    .slider ,.sliderr{
         margin-left: 25vw;
         width: 53vw;
         height: 15px;
@@ -743,18 +1092,9 @@
         border-radius: 5px;
         position: relative;
     }
-    .slider {
-        display: flex;
-        transition: transform 0.3s ease; /* Adjust the duration for the desired speed */
-      }
-    .min-value{
-        display: none;
-    }
-    .max-value{
-        display: none;
-    }
     
-    .slider-filled {
+    
+    .slider-filled ,.slider-filledr{
         height: 100%;
         background: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
         border-radius: 5px;
@@ -764,7 +1104,7 @@
         width: 0;
     }
     
-    .slider-thumb {
+    .slider-thumb ,.slider-thumbr{
         width: 30px;
         height: 30px;
         border: 1px solid black;
@@ -884,6 +1224,9 @@
     address, dl, ol, ul {
         margin-bottom: 1rem;
     }
+    .grass{
+        display: none;
+    }
     .quiz-header .lines li {
         position: relative;
         display: inline-flex;
@@ -936,8 +1279,8 @@
     }
     .quiz-header .logo-main li img {
         max-height: 8rem;
-        height: 5vh;
         width: auto;
+        height: 5vh;
     }
     img, svg {
         vertical-align: middle;
@@ -979,7 +1322,7 @@
     .cta a {
         font-family: sans-serif;
         display: block;
-        font-size: 0.8rem;
+        font-size: 1.8rem;
         line-height: 1.33;
         background-image: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
         letter-spacing: 1.4px;
@@ -998,7 +1341,7 @@
     .quiz-layout .wrapper {
        
         display: flex;
-        top: 5rem;
+        top: 4rem;
          
             z-index: 99;
            
@@ -1023,7 +1366,7 @@
     }
     .caption {
         font-family: sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         letter-spacing: 1.75px;
         text-transform: uppercase;
         margin-bottom: 0;
@@ -1047,14 +1390,10 @@
     .main-title {
         position: relative;
         display: block;
-        margin: 0 4px;
         align-items: center;
         font-family: sans-serif;
-        font-size: 1.8rem;
+        font-size: 3.5rem;
         z-index: 2;
-    }
-    .grass{
-        display: none;
     }
     .caption, .hero-title, .main-title, .sub-title {
         position: relative;
@@ -1082,57 +1421,34 @@
     }
     .sub-title {
         font-family: sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
-    letter-spacing: 0.5px;
-    text-align: center;
-    color: #2c3e50;
-    text-transform: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.27;
+        letter-spacing: .2px;
+        text-align: center;
+        color: #2c3e50;
+        text-transform: none;
+        font-family: sans-serif;
     }
-    .slider-container {
+    .slider-container,.slider-containerr {
         position: relative;
     }
-    .slider-wrapper {
+    .slider-wrapper,.slider-wrapperr {
         width: 100%;
         min-height: 10.5rem;
     }
-    .content .switch-container, .slider-wrapper {
+    .content .switch-container, .slider-wrapper,.content .switch-containerr, .slider-wrapperr {
         position: relative;
     }
-    a{
-        cursor: pointer;
-    }
-    .arrow.prev {
-        left: 2%;
-        transform: translateY(-50%);
-    }
-    .larrow{
-        height: 47px;
-        width: 45px;
-        position: relative;
-        top: 10vh;
-        background-size: cover;
-    }
-    
-    .rarrow{
-        height: 47px;
-        width: 45px;
-        z-index: 999;
-        margin-left: 96.5vw;
-        top: -13vh;
-        background-size: cover;
-        position: relative;
-    }
-    .hslider {
+    .hslider ,.hsliderr{
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 5rem;
     }
-    .hslider .min-value {
+    .hslider .min-value,.hsliderr .min-valuer {
         font-size: 1.5rem;
         max-width: 8rem;
         min-width: 14rem;
@@ -1144,7 +1460,7 @@
         letter-spacing: .9px;
         line-height: 23px;
     }
-    .hslider .max-value, .hslider .min-value {
+    .hslider .max-value, .hslider .min-value ,.hsliderr .max-valuer, .hsliderr .min-valuer{
         font-size: 1.5rem;
         max-width: 8rem;
         min-width: 14rem;
@@ -1156,7 +1472,7 @@
         letter-spacing: .9px;
         line-height: 23px;
     }
-    .sliderValue {
+    .sliderValue,.sliderValuer {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1166,25 +1482,23 @@
         color: #2c3e50;
         margin: auto;
     }
-    .sliderValue .value {
+    .sliderValue .value,.sliderValuer .valuer {
         font-family: sans-serif;
         font-size: 1.6rem;
         font-weight: 900;
         line-height: 1.11;
         letter-spacing: .8px;
     }
-    .sliderValue .subValue {
+    .sliderValue .subValue,.sliderValuer .subValuer {
         font-family: sans-serif;
-        font-size: 1rem;
+        font-size: 1.4rem;
         line-height: 1.31;
-        letter-spacing: .2px;
+        letter-spacing: .3px;
     }
     .detailLink a {
-        font-size: 3.1vw;
         position: relative;
         display: inline-flex;
-        
-        top: -16px;
+        padding: 0.3rem;
         text-transform: uppercase;
         color: #2c3e50;
         text-decoration: underline;
@@ -1223,7 +1537,7 @@
         left: 0;
         height: 50vh;
         overflow: visible;
-        min-height: 30rem;
+        min-height: 45rem;
     }
     .footer-container {
         position: absolute;
@@ -1238,10 +1552,10 @@
         background-repeat: no-repeat;
     }
     .footer-container .grass {
-        height: 506px;
+        height: 575px;
         background-size: cover;
         background-position: center;
-        max-height: 55vh;
+        max-height: 65vh;
         overflow: hidden;
     }
     .arrow.next {
@@ -1282,16 +1596,380 @@
     a{
         cursor: pointer;
     }
+    .arrow.prev {
+        left: 2%;
+        transform: translateY(-50%);
+    }
+    .larrow{
+        height: 47px;
+        width: 45px;
+        position: relative;
+        top: -10vh;
+        background-size: cover;
+    }
+    
     .rarrow{
-        height: 4vh;
-       
+        height: 47px;
+        width: 45px;
         z-index: 999;
         margin-left: 90vw;
-        top: 5vh;
+        top: -15vh;
         background-size: cover;
         position: relative;
     }
-
+    
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .slide-in-br {
+        animation: slide-in-br .5s cubic-bezier(.25,.46,.45,.94) both;
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        outline: 0;
+    }
+    .fade {
+        transition: opacity .15s linear;
+    }
+    .modal-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 4rem);
+        margin: 0 auto;
+    }
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    .modal.fade .modal-dialog {
+        transition: transform .3s ease-out;
+        transform: translateY(-50px);
+    }
+    .modal-content {
+        width: 100vh;
+        height: 100vh;
+        max-width: 60rem;
+        max-height: 60rem;
+    } 
+    .modal-content {
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60rem;
+        width: 60rem;
+        max-height: 95vh;
+        max-width: 95vh;
+        border: none;
+        border-radius: 50%;
+        padding: 5rem;
+    }
+    .cta {
+        position: relative;
+        height: auto;
+        cursor: pointer;
+        display: inline-block;
+        box-shadow: 0 8px 15px rgba(0,0,0,.2);
+        border: none;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    .main-title {
+        animation-name: fadeInRight;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+    .main-title {
+        position: relative;
+        display: block;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 2rem;
+        z-index: 2;
+    }
+    .main-title{
+        position: relative;
+        color: #2c3e50;
+        text-align: center;
+        z-index: 1;
+    }
+    .modal-content .desc-1{
+        animation-name: fadeInLeft;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+    .modal-content .desc-2 {
+        animation-name: fadeInRight;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+    .cta a {
+        font-family: sans-serif;
+        display: block;
+        font-size: 0.8rem;
+        line-height: 1.23;
+        background-image: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
+        letter-spacing: 1.4px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+    }
+    a {
+        cursor: pointer;
+    }
+    .modal-content {
+        width: 100vh;
+        height: 100vh;
+        max-width: 60rem;
+        max-height: 60rem;
+    }
+     .modal-content {
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60rem;
+        width: 60rem;
+        max-height: 95vh;
+        max-width: 95vh;
+        border: none;
+        border-radius: 50%;
+        padding: 5rem;
+    }
+    .cta {
+        position: relative;
+        height: auto;
+        cursor: pointer;
+        display: inline-block;
+        box-shadow: 0 8px 15px rgba(0,0,0,.2);
+        border: none;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    span.info {
+        position: relative;
+        display: inline-block;
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-left: 0.5rem;
+        background-image: url(/assets/icon-info.png);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 100;
+    }
+    #guideModel {
+        background-color: rgba(0,0,0,.5);
+        top: 0rem;
+        overflow: hidden;
+    }
+     .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        outline: 0;
+    }
+    .fade {
+        transition: opacity .15s linear;
+    }
+    #guideModel .modal-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 4rem);
+        margin: 0 auto;
+    }
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    .modal.fade .modal-dialog {
+        transition: transform .3s ease-out;
+        transform: translateY(-50px);
+    }
+    
+    .modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        min-height: calc(100% - 1rem);
+    }
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 0.5rem;
+        pointer-events: none;
+    }
+    #guideModel .modal-content {
+        width: 100vh;
+        height: 100vh;
+        max-width: 40rem;
+        max-height: 40rem;
+    }
+    #guideModel .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    #guideModel .modal-content .image {
+        display: block;
+        width: 10rem;
+        height: 10rem;
+    }
+    .spin-slow {
+        animation: spin 10s linear infinite;
+    }
+    #guideModel .modal-content .image img {
+        width: 100%;
+    }
+    img, svg {
+        vertical-align: middle;
+    }
+    img {
+        border-style: none;
+    }
+    #guideModel .model-text {
+        padding: 0 15px;
+    }
+    .text-center {
+        text-align: center!important;
+    }
+    #guideModel .model-text h3 {
+        margin-top: 72px;
+        font-family: sans-serif;
+        font-size: 2.59rem;
+    }
+     h3 {
+        /* margin-top: 50px; */
+        font-size: 1.75rem;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    #guideModel .model-text p {
+        font-size: 24px;
+        font-family: sans-serif;
+        padding: 0 1.5rem;
+        margin-top: 50px;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    #guideModel .cta-close {
+        position: relative;
+    }
+    .hvr-spin {
+        transition: .2s ease-in-out;
+    }
+    .cta-close {
+        font-family: sans-serif;
+        cursor: pointer;
+    }
+    .cta-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 4rem;
+        color: #2c3e50;
+        padding: 1.5rem;
+        z-index: 2;
+        line-height: .5;
+        max-width: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #guideModel .guideArrow {
+        position: absolute;
+        top: 6%;
+        right: 7%;
+    }
+    #guideModel .guideArrow img {
+        width: 25vw;
+        transform: rotate(0deg);
+    }
+    #guideModel .guideArrow img {
+        width: 25vw;
+        transform: rotate(0deg);
+    }
+    .img-fluid {
+        max-width: 100%;
+        position: relative;
+         top:140px;
+        height: auto;
+    }
+    .max-value,.max-valuer{
+        display: none;
+    }
+    .min-value,.min-valuer{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 820px) and (max-width: 1180px){
@@ -1303,9 +1981,10 @@
         max-height: 55vh;
         overflow: hidden;
     }
+    .img-fluid {
+        max-width: 100%;
+        position: relative;
+        top: 452px;
+        height: auto;
+    }
 }
-
-
-
-
-

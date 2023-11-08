@@ -89,6 +89,16 @@
     }
 
 }
+@keyframes fly{
+    0% {
+        transform: translate(-5rem,5rem);
+    }
+    100% {
+        transform: translate(0);
+    }
+
+}
+
 @media (min-width: 799px){
     body, html {
         position: relative;
@@ -104,7 +114,7 @@
         height: 100vh;
         width: 100vw;
         /* overflow: hidden; */
-        background: linear-gradient(0deg,#c2d7d9,#faedda);
+        background: linear-gradient(180deg,#528bc4,#72b1bd);
     }
     
     
@@ -151,10 +161,6 @@
         border-radius: 5px;
         position: relative;
     }
-    .slider {
-        display: flex;
-        transition: transform 0.3s ease; /* Adjust the duration for the desired speed */
-      }
     
     .slider-filled {
         height: 100%;
@@ -399,36 +405,13 @@
     .quiz-layout .wrapper {
        
         display: flex;
-        top: 5rem;
-         line-height: 3;
+        top: 6rem;
+         
             z-index: 99;
            
         justify-content: center;
     }
-    a{
-        cursor: pointer;
-    }
-    .arrow.prev {
-        left: 2%;
-        transform: translateY(-50%);
-    }
-    .larrow{
-        height: 47px;
-        width: 45px;
-        position: relative;
-        top: -5vh;
-        background-size: cover;
-    }
-    
-    .rarrow{
-        height: 47px;
-        width: 45px;
-        z-index: 999;
-        margin-left: 96.5vw;
-        top: -11vh;
-        background-size: cover;
-        position: relative;
-    }
+
     .fade-in-fwd-with-delay {
         animation: fade-in-fwd .4s cubic-bezier(.39,.575,.565,1) .5s both;
     }
@@ -570,6 +553,7 @@
         line-height: 1.11;
         letter-spacing: .8px;
     }
+
     .sliderValue .subValue {
         font-family: sans-serif;
         font-size: 1.4rem;
@@ -622,7 +606,7 @@
     }
     .footer-container {
         position: absolute;
-        bottom: 0;
+        bottom: -11vh;
         width: 100%;
         background-repeat: no-repeat;
     }
@@ -633,12 +617,11 @@
         background-repeat: no-repeat;
     }
     .footer-container .grass {
-        height: 77vh;
-        bottom: -139px;
+        height: 65vh;
         background-size: cover;
         background-position: center;
-        max-height: 75vh;
-        /* overflow: hidden; */
+        max-height: 65vh;
+        overflow: hidden;
     }
     .arrow.next {
         right: 2%;
@@ -678,7 +661,39 @@
     a{
         cursor: pointer;
     }
+    .arrow.prev {
+        left: 2%;
+        transform: translateY(-50%);
+    }
+    .larrow{
+        height: 47px;
+        width: 45px;
+        position: relative;
+        top: -17vh;
+        background-size: cover;
+    }
     
+    .rarrow{
+        height: 47px;
+        width: 45px;
+        z-index: 999;
+        margin-left: 96.5vw;
+        top: -23vh;
+        background-size: cover;
+        position: relative;
+    }
+    .plane {
+        margin-top: 3vh;
+        margin-left: 25vw;
+    }
+    .d-flex {
+        display: flex!important;
+    }
+    .plane img {
+        max-width: 20rem;
+        transform: translate(-5rem,5rem);
+        animation: fly 3s ease-in forwards;
+    }
 }
 @media (max-width:799px){
     body, html {
@@ -695,9 +710,20 @@
         height: 100vh;
         width: 100vw;
         /* overflow: hidden; */
-        background: linear-gradient(0deg,#c2d7d9,#faedda);
+        background: linear-gradient(180deg,#528bc4,#72b1bd);
     }
-    
+    .plane {
+        margin-top: 3vh;
+        margin-left: 25vw;
+    }
+    .d-flex {
+        display: flex!important;
+    }
+    .plane img {
+        max-width: 20rem;
+        transform: translate(-5rem,5rem);
+        animation: fly 3s ease-in forwards;
+    }
     
     .bg-1 {
       width: 100vw;
@@ -742,16 +768,6 @@
         background: linear-gradient(90deg,#40485c,#849398);
         border-radius: 5px;
         position: relative;
-    }
-    .slider {
-        display: flex;
-        transition: transform 0.3s ease; /* Adjust the duration for the desired speed */
-      }
-    .min-value{
-        display: none;
-    }
-    .max-value{
-        display: none;
     }
     
     .slider-filled {
@@ -936,8 +952,8 @@
     }
     .quiz-header .logo-main li img {
         max-height: 8rem;
-        height: 5vh;
         width: auto;
+        height: 5vh;
     }
     img, svg {
         vertical-align: middle;
@@ -978,16 +994,16 @@
     }
     .cta a {
         font-family: sans-serif;
-        display: block;
-        font-size: 0.8rem;
-        line-height: 1.33;
-        background-image: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
-        letter-spacing: 1.4px;
-        text-align: center;
-        color: #fff;
-        text-decoration: none;
-        padding: 1rem 2rem;
-        text-transform: uppercase;
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.23;
+    background-image: radial-gradient(circle,#ff9b1a 0,#ff9000 50%);
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
     }
     .m{
         background-image: radial-gradient(circle,#ff9b1a 0,#ff9000 50%)
@@ -1023,7 +1039,7 @@
     }
     .caption {
         font-family: sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         letter-spacing: 1.75px;
         text-transform: uppercase;
         margin-bottom: 0;
@@ -1046,15 +1062,12 @@
     }
     .main-title {
         position: relative;
-        display: block;
-        margin: 0 4px;
-        align-items: center;
-        font-family: sans-serif;
-        font-size: 1.8rem;
-        z-index: 2;
-    }
-    .grass{
-        display: none;
+    display: block;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1.9rem;
+    margin: 0 3vh;
+    z-index: 2;
     }
     .caption, .hero-title, .main-title, .sub-title {
         position: relative;
@@ -1082,15 +1095,19 @@
     }
     .sub-title {
         font-family: sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
-    letter-spacing: 0.5px;
-    text-align: center;
-    color: #2c3e50;
-    text-transform: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.27;
+        letter-spacing: .1px;
+        text-align: center;
+        color: #2c3e50;
+        text-transform: none;
+    }
+    .min-value,.max-value{
+        display: none;
+
     }
     .slider-container {
         position: relative;
@@ -1100,30 +1117,6 @@
         min-height: 10.5rem;
     }
     .content .switch-container, .slider-wrapper {
-        position: relative;
-    }
-    a{
-        cursor: pointer;
-    }
-    .arrow.prev {
-        left: 2%;
-        transform: translateY(-50%);
-    }
-    .larrow{
-        height: 47px;
-        width: 45px;
-        position: relative;
-        top: 10vh;
-        background-size: cover;
-    }
-    
-    .rarrow{
-        height: 47px;
-        width: 45px;
-        z-index: 999;
-        margin-left: 96.5vw;
-        top: -13vh;
-        background-size: cover;
         position: relative;
     }
     .hslider {
@@ -1168,26 +1161,25 @@
     }
     .sliderValue .value {
         font-family: sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 900;
         line-height: 1.11;
         letter-spacing: .8px;
     }
     .sliderValue .subValue {
         font-family: sans-serif;
-        font-size: 1rem;
+        font-size: 1.4rem;
         line-height: 1.31;
-        letter-spacing: .2px;
+        letter-spacing: .3px;
     }
     .detailLink a {
         font-size: 3.1vw;
-        position: relative;
-        display: inline-flex;
-        
-        top: -16px;
-        text-transform: uppercase;
-        color: #2c3e50;
-        text-decoration: underline;
+    position: relative;
+    display: inline-flex;
+    top: -16px;
+    text-transform: uppercase;
+    color: #2c3e50;
+    text-decoration: underline;
     }
     .cta-bg-up {
         position: relative;
@@ -1243,6 +1235,7 @@
         background-position: center;
         max-height: 55vh;
         overflow: hidden;
+        display: none;
     }
     .arrow.next {
         right: 2%;
@@ -1282,18 +1275,28 @@
     a{
         cursor: pointer;
     }
+    .arrow.prev {
+        left: 2%;
+        transform: translateY(-50%);
+    }
+    .larrow{
+        height: 47px;
+        width: 45px;
+        position: relative;
+        top: 7vh;
+        background-size: cover;
+    }
+    
     .rarrow{
-        height: 4vh;
-       
+        height: 47px;
+        width: 45px;
         z-index: 999;
         margin-left: 90vw;
-        top: 5vh;
+        top: 2vh;
         background-size: cover;
         position: relative;
     }
-
 }
-
 @media screen and (min-width: 820px) and (max-width: 1180px){
     .footer-container .grass {
         height: 506px;
@@ -1304,6 +1307,8 @@
         overflow: hidden;
     }
 }
+
+
 
 
 

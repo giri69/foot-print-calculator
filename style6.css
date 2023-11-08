@@ -653,7 +653,7 @@
         height: 47px;
         width: 45px;
         position: relative;
-        top: -45vh;
+        top: -35vh;
         background-size: cover;
     }
     
@@ -662,7 +662,7 @@
         width: 45px;
         z-index: 999;
         margin-left: 96.5vw;
-        top: -51vh;
+        top: -41vh;
         background-size: cover;
         position: relative;
     }

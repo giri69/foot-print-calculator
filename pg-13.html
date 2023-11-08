@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style6.css" />
+    <link rel="stylesheet" href="style13.css" />
   </head>
   <body
     class="body height-base lang-en sponsor-FR dir-ltr section-quiz housing-type page-Type device-Desktop"
@@ -32,13 +32,13 @@
               <li class="inactive m"></li>
               <li class="inactive m"></li>
               <li class="inactive m"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
-              <li class="inactive"></li>
+              <li class="inactiv m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
+              <li class="inactive m"></li>
               <li class="inactive"></li>
             </ul>
           </div>
@@ -79,76 +79,56 @@
         </div>
         <div class="wrapper">
           <div class="content fade-in-fwd-with-delay">
-            <p class="caption">Housing</p>
+            <p class="caption">TRANSPORTATION</p>
             <div class="question-container stack-top">
-              <h1 class="main-title">How many people live in your household?
-                <span class="info" id="population-info"></span>
+              <h1 class="main-title">How far do you travel on public transportation each week?
+                
               </h1>
               <h3 class="sub-title">
-                (less than 320 kilometers/200 miles away)
+                (bus, train, etc.)
               </h3>
             </div>
             <div class="slider-containerr" style="min-height: 11rem">
-              <div class="slider-wrapper">
-                <div class="hslider">
-                  <div class="min-value">JUST ME</div>
-                  <div class="slider" id="cc">
-                    <div class="slider-filled" id="cb"></div>
-                    <div class="slider-thumb" id="ce"></div>
-                  </div>
-                  <div class="max-value">10+</div>
-                </div>
-                <div class="sliderValue">
-                  <div class="value" id="frst">1</div>
-                </div>
-              </div>
-             
-            </div>
-            <div class="question-container">
-                <h1 class="main-title">
-                    What is the size of your home?
-                </h1>
-            </div>
-            <div class="slider-containerr" style="min-height: 11rem">
+                
                 <div class="slider-wrapper">
                   <div class="hslider">
-                    <div class="min-valuer">TINY</div>
-                    <div class="slider" id="cc2">
-                      <div class="slider-filled" id="cb2"></div>
-                      <div class="slider-thumb" id="ce2"></div>
+                    <div class="min-value">NOT FAR</div>
+                    <div class="slider" id="cc">
+                      <div class="slider-filled" id="cb"></div>
+                      <div class="slider-thumb" id="ce"></div>
                     </div>
-                    <div class="max-valuer">HUGE</div>
+                    <div class="max-value">VERY FAR</div>
                   </div>
                   <div class="sliderValuer">
-                    <div class="valuer" id="frst2">Tiny</div>
-                    <div class="subValuer" id="scnd2"> 958  m² / 10309 sq ft</div>
+                    <div class="valuer" id="frst">0 kms</div>
+                    <div class="subValuer" id="scnd">0 miles</div>
                   </div>
                 </div>
                 
               </div>
-              <img src="assets/Man1.png" alt="" class="img-fluid" id="iii">
+                 
+            
+            
+              
+              
           </div>
         </div>
        
-            <a href="pg-5.html"  class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
+            <a href="pg-12.html"  class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
                 
             </a>
-            <a href="pg-7.html" class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
+            <a href="pg-14.html" class="rarrow" style="background-image: url(assets/right.png);z-index: 999;">
                 
             </a>
         <footer class="footer-container">
             <div class="grass" id="ii"
-              style="background-image: url('assets/HousingMemberAreaApartmentTinyDesktop.png')"></div>
+              style="background-image: url('assets/TransportationPublicTransportDesktop.png')"></div>
           </footer>
       </div>
     </div>
     <script>
 
-        var tet=document.getElementById("population-info").addEventListener("click",function(){
-
-            var element = document.getElementById("guideModel");
-            element.style.display = "block"; 
-        })
+       
         
     
 
@@ -219,64 +199,22 @@
                 if (index === 0) 
                 {
                   const y2 = document.getElementById("frst");
-                const x2 = document.getElementById("iii");
-                const per2 = percentage;
+                const x2 = document.getElementById("scnd");
+                const per2 = Math.floor(percentage);
 
-                if (per2 <= 20) {
-                    y2.innerHTML = "1";
-                    x2.src="assets/Man1.png"
-
-                } else if (per2 > 20 && per2 <= 30) {
-                    y2.innerHTML = "2";
-                    x2.src="assets/Man2.png"
-            
-                } else if (per2 > 30 && per2 <= 40) {
-                    y2.innerHTML = "3";
-                    x2.src="assets/Man3.png"
-                } else if (per2 > 40 && per2 <= 50) {
-                    y2.innerHTML = "4";
-                    x2.src="assets/Man4.png"
-                } else if (per2 > 50 && per2 <= 60) {
-                    y2.innerHTML = "5";
-                    x2.src="assets/Man4.png"
-                } else if (per2 > 60 && per2 <= 70) {
-                    y2.innerHTML = "6";
-                    x2.src="assets/Man6.png"
-                } else if (per2 > 70 && per2 <= 80) {
-                    y2.innerHTML = "7";
-                    x2.src="assets/Man7.png"
-                } else if (per2 > 80 && per2 <= 90) {
-                    y2.innerHTML = "8";
-                    x2.src="assets/Man8.png"
-                } else if (per2 > 90 && per2 < 100) {
-                    y2.innerHTML = "9";
-                    x2.src="assets/Man9.png"
-                } else {
-                    y2.innerHTML = "10";
-                    x2.src="assets/Man10.png"
-                }
+                y2.innerHTML= per2*8+" kms";
+                x2.innerHTML=per2*5+" miles";
+                localStorage.setItem('pg-13-val:',y2.innerHTML);
               } 
               else if (index === 1) 
               {
-              const y2 = document.getElementById("frst2");
-              const x2 = document.getElementById("scnd2");
-              const per2 = percentage;
-              x2.innerHTML = Math.floor(per2 * 13.94) + " m² / " + Math.floor(per2 * 150) + " sq ft";
-
-              if (per2 < 10) {
-                  y2.innerHTML = "Tiny";
-                  x2.innerHTML= Math.floor(per2*13.94)+" m²  /  "+Math.floor(per2*150)+" sq ft"
-              } else if (per2 >= 10 && per2 <= 25) {
-                  y2.innerHTML = "Small";
-                  x2.innerHTML= Math.floor(per2*13.94)+" m²  /  "+Math.floor(per2*150)+" sq ft"
-                } else if (per2 <= 40) {
-                  y2.innerHTML = "Medium";
-                  x2.innerHTML= Math.floor(per2*13.94)+" m²  /  "+Math.floor(per2*150)+" sq ft"
-                } else {
-                  y2.innerHTML = "Huge";
-                  x2.innerHTML= Math.floor(per2*13.94)+" m²  /  "+Math.floor(per2*150)+" sq ft"
-              }
-        
+                const y2 = document.getElementById("frst2");
+                const x2 = document.getElementById("scnd2");
+                const per2 = Math.floor(percentage);
+                
+                y2.innerHTML= per2*8+" kms";
+                x2.innerHTML=per2*5+" miles";
+                localStorage.setItem('pg-13-val:',y2.innerHTML);
                 
             }
 

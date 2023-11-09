@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="wrapper">
-          <div class="content fade-in-fwd-with-delay">
+          <div class="content fade-in-fwd-with-delay" id="qnb">
             <p class="caption">Food</p>
             <div class="question-container">
               <h1 class="main-title">
@@ -89,12 +89,45 @@
                 </div>
               </div>
               <div class="detailLink">
-                <a class="cta-bg-up">ADD DETAILS TO IMPROVE ACCURACY</a>
+                <a class="cta-bg-up" id="qnt">ADD DETAILS TO IMPROVE ACCURACY</a>
               </div>
             </div>
           </div>
         </div>
-       
+        <div id="detailedOptions" class="detailed-options">
+          <div class=" detailed-options-container">
+            <div class="cta-close hvr-spin" id="qnt2">×</div>
+            <div class="question-container">
+              <h2 class="slider-advance-question">
+                How often do you eat
+              </h2>
+            </div>
+            <div class="cslider-container">
+              <div class="cs-wrapper">
+                <div class="slider-question">fresh, unpackaged foods?</div>
+                <div id="cSlider" class="cslider slider-1 rs-chrome re-control re-classic-mode rs-animation" style="height: 180px; width: 180px;">
+                  <div class="slider-containerr" id="slider-1">
+                    <div class="slider-circler"></div>
+                    <div class="slider-thumb-1" id="slider-thumb-1"></div>
+                    <div class="slider-label-1" id="slider-label-1">0%</div>
+                </div>
+                </div>
+              </div>
+              <div class="cs-wrapper">
+                <div class="slider-question">locally grown or produced?</div>
+                  <div id="cSlider" class="cslider slider-2 rs-chrome re-control re-classic-mode rs-animation" style="height: 180px; width: 180px;">
+                  <div class="slider-containerr" id="slider-2">
+                     <div class="slider-circler"></div>
+                    <div class="slider-thumb-2" id="slider-thumb-2"></div>
+                    <div class="slider-label-2" id="slider-label-2">0%</div>
+                 </div>
+              
+                </div>
+              </div>
+             </div>
+            <div class="cta-save cta-hvr" id="qnt3">SAVE</div>
+          </div>
+        </div>
             <a href="pg2.html" class="larrow" style="background-image: url(assets/left.png);z-index: 999;">
                 
             </a>
@@ -109,6 +142,109 @@
       </div>
     </div>
     <script>
+       document.getElementById("qnt").addEventListener("click", function () {
+  const divToHide = document.getElementById("qnb");
+  const divToAddClass = document.getElementById("detailedOptions");
+       divToHide.style.display = "none";
+       divToAddClass.classList.add("swing-in-top-fwd");
+      divToAddClass.style.display = "flex";
+      const sliders = [
+            document.getElementById("slider-1"),
+            document.getElementById("slider-2"),
+        ];
+
+       
+        sliders.forEach((circleSlider, index) => {
+            const thumb = document.getElementById(`slider-thumb-${index + 1}`);
+            const label = document.getElementById(`slider-label-${index + 1}`);
+            let isDragging = false;
+
+            circleSlider.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                updateSlider(e, thumb, label, index, circleSlider);
+            });
+
+            circleSlider.addEventListener("touchstart", (e) => {
+                isDragging = true;
+                updateSlider(e.touches[0], thumb, label, index, circleSlider);
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                if (isDragging) {
+                    updateSlider(e, thumb, label, index, circleSlider);
+                }
+            });
+
+            document.addEventListener("touchmove", (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    updateSlider(e.touches[0], thumb, label, index, circleSlider);
+                }
+            });
+
+            document.addEventListener("mouseup", () => {
+                isDragging = false;
+            });
+
+            document.addEventListener("touchend", () => {
+                isDragging = false;
+            });
+        });
+
+        function updateSlider(e, thumb, label, index, circleSlider) {
+            const rect = circleSlider.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+            const radius = rect.width / 2;
+
+            let offsetX = radius * Math.cos(angle);
+            let offsetY = radius * Math.sin(angle);
+
+            const distance = Math.sqrt(offsetX ** 2 + offsetY ** 2);
+            if (distance > radius) {
+                const scale = radius / distance;
+                offsetX *= scale;
+                offsetY *= scale;
+            }
+
+            thumb.style.left = (rect.width / 2 + offsetX) + "px";
+            thumb.style.top = (rect.height / 2 + offsetY) + "px";
+
+            const degrees = (Math.atan2(offsetY, offsetX) * (180 / Math.PI) + 360) % 360;
+            const percentage = (degrees / 360) * 100;
+
+            const per = Math.floor(percentage);
+            label.textContent = per+" %";
+            localStorage.setItem('pg-3-2.'+`${index}:`,perr);
+
+        }
+      
+    });
+    document.getElementById('qnt3').addEventListener("click", function () {
+      const divToHide3 = document.getElementById("qnb");
+      const divToAddClass3 = document.getElementById("detailedOptions");
+      
+      
+      
+      divToHide3.removeAttribute("style");
+  
+      
+      
+      divToAddClass3.classList.add("swing-out-top-bck");
+      divToAddClass3.classList.remove("swing-in-top-fwd");
+      divToAddClass3.style.display="none";});
+    
+    document.getElementById('qnt2').addEventListener("click", function () {
+      const divToHide2 = document.getElementById("qnb");
+      const divToAddClass2 = document.getElementById("detailedOptions");
+      
+       divToHide2.removeAttribute("style");
+       divToAddClass2.classList.add("swing-out-top-bck");
+      divToAddClass2.classList.remove("swing-in-top-fwd");
+      divToAddClass2.style.display="none";
+  
+});
         
         const slider = document.querySelector(".slider");
 const filled = document.querySelector(".slider-filled");
@@ -168,6 +304,7 @@ localStorage.setItem('pg-3-per:',perr);
        y.innerHTML=Math.floor(per)+"%"
     
       }
+      
     </script>
   </body>
 </html>

@@ -22,6 +22,7 @@
 
     }
 }
+
 @keyframes fadeInUp
 {
     0% {
@@ -144,6 +145,7 @@
         background-color: hsla(0, 0%, 100%, .1);
         z-index: 999;
     }
+    
     
     .chotu {
         position: relative;
